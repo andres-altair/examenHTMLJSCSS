@@ -35,19 +35,35 @@ const imagenes = {prestamos: 'prestamosbiblio.jpg', socios: 'userbiblio.jpg', in
 // Aquí van las funciones
 
 export function listaPrestamos() {
-    // crea una lista de préstamos y la devuelve
-    
+    const ul = document.createElement("ul");
+    ul.className="list-group";
+    arrayPrestamos.forEach(prestamo => {
+        const li = document.createElement("li");
+        li.innerHTML = 'id:' +prestamo.id + ' titulo : ' + prestamo.titulo + ' autor: ' + prestamo.autor ;
+        ul.appendChild(li);
+    })
+return ul;
 }
-    
 
 export function imgPrestamos() {
-    // devuelve la imagen de préstamos
+   const img = document.createElement("img");
+   img.className="img";
+   img.src="/.prestamosbiblio.jpg";
+   return img;
 }
-
 export function listaSocios() {
-    // Crea y devuelve la lista de socios
+    const ul = document.createElement("ul");
+    ul.className="list-group";
+    arraySocios.forEach(socios => {
+        const li = document.createElement("li");
+        li.innerHTML = 'id:' + socios.idSocio + ' nombre: ' + socios.nombre +  ' mail: ' + socios.mail ;
+        ul.appendChild(li);
+    });
+    return ul;
 }
-
 export function imgSocios() {
-    // devuelve laimagen de socios
+    const img = document.createElement("img");
+    img.src="/.userbiblio.jpg";
+    img.className="img";
+    return img;
 }

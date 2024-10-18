@@ -9,3 +9,6 @@ body {
 footer {
     flex-shrink: 0;
 }
+span{
+    color: green;
+}

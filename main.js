@@ -12,13 +12,30 @@ EN CONCRETO, HAY QUE MOSTRAR UNA LISTA DE PRÉSTAMOS Y UNA LISTA DE SOCIOS
 //      * Una función (o dos) que solicitará el listado formateado de préstamos/de socios y el nombre de la imagen correspondiente
 //      * Luego colocará el listado en el bloque de la izquierda sustituyendo lo que allí aparezca
 //      * Para terminar, colocará la imagen en la columna de la derecha
+
+import { listaPrestamos, listaSocios, imgPrestamos, imgSocios } from "./funciones.js";
 function listadoPrestamos() {
-    
+    const texto = document.querySelector('#texto');
+    texto.innerHTML = '';
+    texto.append(listaPrestamos());
+   
+    const imagen = document.querySelector('#imagen');
+    imagen.innerHTML='';
+    imagen.append(imgPrestamos());
 }
 
 function listadoSocios() {
-    
+
+
+    const  listado = listaSocios();
+  //  document.querySelector("#texto").innerHTML="";
+  //  document.querySelector("#imagen").innerHTML="";
+
+    document.querySelector("#texto").append(listaSocios());
+    document.querySelector("#imagen").append(imgSocios());
 
 }
 
 // EJERCICIO 2.3 Enlazar las funciones del módulo main con las funciones del objeto window
+window.verSocios=listadoSocios;
+window.verPrestamos=listadoPrestamos;
